@@ -1,4 +1,4 @@
-import { InputType, Field, ID, Enum } from '@nestjs/graphql';
+import { InputType, Field, ID } from '@nestjs/graphql';
 import { IsEnum, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
 import { VendorCategory } from './vendor.schema';

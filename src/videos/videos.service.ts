@@ -24,7 +24,7 @@ export class VideosService {
     return this.videoModel.find(filter).exec();
   }
 
-  async findOne(id: string): Promise<Video> {
+  async findOne(id: string): Promise<VideoDocument> {
     const video = await this.videoModel.findById(id).exec();
     if (!video) {
       throw new NotFoundException(`Video with id "${id}" not found`);

@@ -23,7 +23,7 @@ export class SocialService {
     return this.socialAccountModel.find({ vendorId }).exec();
   }
 
-  async findOne(id: string): Promise<SocialAccount> {
+  async findOne(id: string): Promise<SocialAccountDocument> {
     const account = await this.socialAccountModel.findById(id).exec();
     if (!account) {
       throw new NotFoundException(`SocialAccount with id "${id}" not found`);
@@ -31,7 +31,7 @@ export class SocialService {
     return account;
   }
 
-  async connect(input: ConnectSocialInput): Promise<SocialAccount> {
+  async connect(input: ConnectSocialInput): Promise<SocialAccountDocument> {
     // In production, this would initiate OAuth 2.0 flow with each platform
     // For TikTok: https://developers.tiktok.com/doc/tiktok-api-oauth2/
     // For Instagram: Facebook Graph API / Instagram Graph API
@@ -57,7 +57,7 @@ export class SocialService {
     return true;
   }
 
-  async refreshToken(id: string): Promise<SocialAccount> {
+  async refreshToken(id: string): Promise<SocialAccountDocument> {
     const account = await this.findOne(id);
 
     let newAccessToken = account.accessToken;
