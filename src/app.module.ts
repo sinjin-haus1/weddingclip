@@ -10,6 +10,7 @@ import { ReviewsModule } from './reviews/reviews.module';
 import { VideosModule } from './videos/videos.module';
 import { SocialModule } from './social/social.module';
 import { AccountsModule } from './accounts/accounts.module';
+import { GooglePlacesModule } from './google-places/google-places.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { AccountsModule } from './accounts/accounts.module';
     VideosModule,
     SocialModule,
     AccountsModule,
+    GooglePlacesModule,
   ],
 })
 export class AppModule {}
