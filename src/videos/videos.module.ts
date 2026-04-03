@@ -6,6 +6,7 @@ import { VideosResolver } from './videos.resolver';
 import { SocialModule } from '../social/social.module';
 import { ReviewsModule } from '../reviews/reviews.module';
 import { VendorsModule } from '../vendors/vendors.module';
+import { VideoGenerationModule } from '../video-generation/video-generation.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { VendorsModule } from '../vendors/vendors.module';
     SocialModule,
     ReviewsModule,
     VendorsModule,
+    VideoGenerationModule,
   ],
   providers: [VideosService, VideosResolver],
   exports: [VideosService],
